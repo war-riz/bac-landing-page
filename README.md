@@ -4,7 +4,7 @@
 
 Marketing and documentation site for BAC Gateway, a stack-agnostic reverse proxy that detects and blocks Broken Access Control attacks before they reach your application.
 
-[![Live Site](https://img.shields.io/badge/live-visit%20site-0ea5e9)](https://your-landing-page-url.vercel.app)
+[![Live Site](https://img.shields.io/badge/live-visit%20site-0ea5e9)](https://bac-landing-page.vercel.app)
 [![Gateway Repo](https://img.shields.io/badge/gateway-source-6366f1)](https://github.com/war-riz/bac-gateway)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 [![GitHub Repo stars](https://img.shields.io/github/stars/war-riz/bac-landing-page?style=social)](https://github.com/war-riz/bac-landing-page/stargazers)
@@ -65,8 +65,6 @@ Integrating an existing app with the gateway is a roughly ten line contract, two
   <img src="public/screenshots/attackers-page.png" alt="Attacker profiling page" width="800" />
   <br/><em>Attacker profiling by source</em>
 </p>
-
-> If you have a fresh screenshot of the landing page itself, drop it into `public/screenshots/` and swap it in above. `og-image.png` is currently used as the general preview image.
 
 ## Tech stack
 

@@ -2,6 +2,7 @@ import type { LinkSet, FlowStep, AttackType, Screenshot, LogEntry, FaqItem } fro
 
 export const links: LinkSet = {
   github: 'https://github.com/war-riz/bac-gateway',
+  landingithub: 'https://github.com/war-riz/bac-landing-page', 
   dashboard: 'https://YOUR-DASHBOARD.vercel.app',
 };
 

@@ -26,7 +26,7 @@ export default function Navbar({ githubStars }: { githubStars?: ReactNode }) {
       transition={{ duration: 0.5 }}
       className="fixed inset-x-0 top-4 z-50 px-4"
     >
-      <div className="mx-auto flex h-16 max-w-page items-center justify-between rounded-2xl border border-border bg-surface/80 px-5 shadow-[0_8px_30px_rgba(0,0,0,0.08)] backdrop-blur-xl">
+      <div className="mx-auto flex h-16 max-w-page items-center justify-between rounded-2xl border border-border bg-surface/55 px-5 shadow-[0_8px_30px_rgba(0,0,0,0.08)] backdrop-blur-xl">
         <a href="#top" className="flex items-center gap-1 font-mono text-[15px] font-semibold text-ink">
           BAC<span className="text-block">{'//'}</span>Gateway
         </a>

@@ -12,17 +12,17 @@ const item = { hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0, transiti
 
 export default function Hero() {
   return (
-    <header id="top" className="relative flex min-h-dvh flex-col overflow-hidden">
-      <TextureBackground src="/images/texture-circuit.jpg" opacity={0.14} priority />
-      <DotGrid className="opacity-60" />
-      <div className="pointer-events-none absolute inset-0 bg-bg/70" />
+    <header id="top" className="relative flex min-h-dvh flex-col overflow-hidden bg-bg">
+      <TextureBackground src="/images/texture-circuit.jpg" opacity={0.4} priority />
+      <DotGrid className="opacity-20" />
+      <div className="pointer-events-none absolute inset-0 bg-linear-to-r from-bg/75 via-bg/25 to-transparent lg:to-bg/0" />
 
       <div className="h-24 shrink-0 lg:h-28" aria-hidden />
 
       <div className="relative flex flex-1 items-center">
         <div className="mx-auto grid w-full max-w-page grid-cols-1 items-center gap-14 px-6 pb-10 sm:px-8 lg:grid-cols-[1.1fr_1fr] lg:px-10">
           <motion.div variants={container} initial="hidden" animate="show">
-            <motion.span variants={item} className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface px-3 py-1 font-mono text-[11px] tracking-wide text-ink-dim">
+            <motion.span variants={item} className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface/60 backdrop-blur-md px-3 py-1 font-mono text-[11px] tracking-wide text-ink-dim">
               <span className="h-1.5 w-1.5 animate-pulse-ring rounded-full bg-allow" />
               {heroCopy.badge}
             </motion.span>

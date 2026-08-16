@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
+import Script from 'next/script';
 import ThemeProvider from '@/components/ThemeProvider';
 import './globals.css';
 
@@ -44,9 +45,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (<html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
-      <body className="font-body antialiased">
-        <ThemeProvider>{children}</ThemeProvider>
-      </body>
-    </html>
+    <body className="font-body antialiased">
+      <ThemeProvider>{children}</ThemeProvider>
+      <Script
+        src={process.env.NEXT_PUBLIC_UMAMI_SCRIPT_URL}
+        data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
+        strategy="afterInteractive"
+      />
+    </body>
+  </html>
   );
 }

@@ -40,8 +40,8 @@ export default function TerminalFeed() {
   }, [reduceMotion]);
 
   return (
-    <div className="overflow-hidden rounded-xl border border-border bg-surface shadow-[0_1px_0_rgba(255,255,255,0.03)_inset,0_8px_24px_rgba(0,0,0,0.35)]">
-      <div className="flex items-center gap-2 border-b border-border bg-surface2 px-4 py-3">
+    <div className="overflow-hidden rounded-xl border border-border bg-surface/70 backdrop-blur-xl shadow-[0_1px_0_rgba(255,255,255,0.03)_inset,0_8px_24px_rgba(0,0,0,0.35)]">
+  <div className="flex items-center gap-2 border-b border-border bg-surface2/60 backdrop-blur-md px-4 py-3">
         <span className="h-3 w-3 rounded-full bg-[#FF5F57]" />
         <span className="h-3 w-3 rounded-full bg-[#FEBC2E]" />
         <span className="h-3 w-3 rounded-full bg-[#28C840]" />

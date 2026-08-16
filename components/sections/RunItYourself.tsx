@@ -23,7 +23,7 @@ export default function RunItYourself() {
               ))}
             </ul>
             <div className="mt-6">
-              <Button href={`${links.github}#readme`} variant="primary" external>
+              <Button href={`${links.landingithub}#readme`} variant="primary" external>
                 {runItCopy.cta}
               </Button>
             </div>

@@ -1,5 +1,6 @@
 export type LinkSet = {
   github: string;
+  landingithub: string;
   dashboard: string;
 };
 

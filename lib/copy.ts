@@ -31,7 +31,7 @@ export const attackGridCopy = {
 export const inActionCopy = {
   eyebrow: 'In action',
   title: 'Watch it catch an attack, live.',
-  body: 'Real-time events, ML scoring, and attacker profiling - drop your own captures into /public/screenshots.',
+  body: 'Real-time events, ML scoring, and attacker profiling',
 };
 
 export const runItCopy = {

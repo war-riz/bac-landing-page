@@ -1,3 +1,7 @@
+'use client';
+
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { ArrowUp } from 'lucide-react';
 import { links, footerCopy } from '@/lib';
 import Button from '@/components/ui/Button';
@@ -7,22 +11,38 @@ const FOOTER_COLUMNS = [
   {
     heading: 'Project',
     items: [
-      { label: 'How it works', href: '#how' },
-      { label: 'Attacks stopped', href: '#attacks' },
-      { label: 'In action', href: '#screenshots' },
+      { label: 'How it works', href: '/#how' },
+      { label: 'Attacks stopped', href: '/#attacks' },
+      { label: 'In action', href: '/#screenshots' },
     ],
   },
   {
     heading: 'Resources',
     items: [
-      { label: 'Run it locally', href: '#run' },
-      { label: 'FAQ', href: '#faq' },
-      { label: 'GitHub', href: links.github },
+      { label: 'Run it locally', href: '/#run' },
+      { label: 'FAQ', href: '/#faq' },
+      { label: 'GitHub', href: links.github, external: true },
+    ],
+  },
+  {
+    heading: 'Legal',
+    items: [
+      { label: 'Privacy Policy', href: '/privacy' },
+      { label: 'Terms of Service', href: '/terms' },
     ],
   },
 ];
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  const goTop = (e: React.MouseEvent) => {
+    if (pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <footer className="relative flex min-h-dvh flex-col justify-between overflow-hidden bg-[#0A0E14] text-[#E7ECF3]">
       <TextureBackground src="/images/texture-server.jpg" opacity={0.18} />
@@ -33,7 +53,7 @@ export default function Footer() {
           <Button href={links.dashboard} variant="primary" external>{footerCopy.ctaButton}</Button>
         </div>
 
-        <div className="grid grid-cols-1 gap-x-12 gap-y-10 py-16 sm:grid-cols-3">
+        <div className="grid grid-cols-1 gap-x-12 gap-y-10 py-16 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <span className="font-mono text-sm font-semibold">BAC//Gateway</span>
             <p className="mt-3 max-w-55 text-xs leading-relaxed text-white/50">{footerCopy.tagline}</p>
@@ -43,11 +63,21 @@ export default function Footer() {
             <div key={col.heading}>
               <span className="text-xs font-semibold uppercase tracking-wide text-white/40">{col.heading}</span>
               <ul className="mt-4 flex flex-col gap-3">
-                {col.items.map((item) => (
-                  <li key={item.label}>
-                    <a href={item.href} className="text-sm text-white/70 hover:text-white">{item.label}</a>
-                  </li>
-                ))}
+                {col.items.map((item) =>
+                  'external' in item && item.external ? (
+                    <li key={item.label}>
+                      <a href={item.href} target="_blank" rel="noopener noreferrer" className="text-sm text-white/70 hover:text-white">
+                        {item.label}
+                      </a>
+                    </li>
+                  ) : (
+                    <li key={item.label}>
+                      <Link href={item.href} className="text-sm text-white/70 hover:text-white">
+                        {item.label}
+                      </Link>
+                    </li>
+                  )
+                )}
               </ul>
             </div>
           ))}
@@ -57,9 +87,9 @@ export default function Footer() {
       <div className="relative">
         <div className="mx-auto flex w-full max-w-page flex-col items-start gap-3 border-t border-white/10 px-6 py-6 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
           <span>{footerCopy.copyright}</span>
-          <a href="#top" className="inline-flex items-center gap-1.5 hover:text-white">
+          <Link href="/" onClick={goTop} className="inline-flex items-center gap-1.5 hover:text-white">
             Back to top <ArrowUp size={13} />
-          </a>
+          </Link>
         </div>
         <div className="overflow-hidden pb-4">
           <span

@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { motion } from 'motion/react';
 import ThemeToggle from '@/components/ThemeToggle';
@@ -9,15 +11,23 @@ import { links } from '@/lib';
 import type { ReactNode } from 'react';
 
 const NAV_LINKS = [
-  { href: '#how', label: 'How it works' },
-  { href: '#attacks', label: 'Attacks stopped' },
-  { href: '#screenshots', label: 'In action' },
-  { href: '#faq', label: 'FAQ' },
-  { href: '#run', label: 'Run it' },
+  { href: '/#how', label: 'How it works' },
+  { href: '/#attacks', label: 'Attacks stopped' },
+  { href: '/#screenshots', label: 'In action' },
+  { href: '/#faq', label: 'FAQ' },
+  { href: '/#run', label: 'Run it' },
 ];
 
 export default function Navbar({ githubStars }: { githubStars?: ReactNode }) {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  const goTop = (e: React.MouseEvent) => {
+    if (pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   return (
     <motion.nav
@@ -27,15 +37,15 @@ export default function Navbar({ githubStars }: { githubStars?: ReactNode }) {
       className="fixed inset-x-0 top-4 z-50 px-4"
     >
       <div className="mx-auto flex h-16 max-w-page items-center justify-between rounded-2xl border border-border bg-surface/55 px-5 shadow-[0_8px_30px_rgba(0,0,0,0.08)] backdrop-blur-xl">
-        <a href="#top" className="flex items-center gap-1 font-mono text-[15px] font-semibold text-ink">
+        <Link href="/" onClick={goTop} className="flex items-center gap-1 font-mono text-[15px] font-semibold text-ink">
           BAC<span className="text-block">{'//'}</span>Gateway
-        </a>
+        </Link>
 
         <div className="hidden items-center gap-7 lg:flex">
           {NAV_LINKS.map((l) => (
-            <a key={l.href} href={l.href} className="text-sm text-ink-dim transition-colors hover:text-ink">
+            <Link key={l.href} href={l.href} className="text-sm text-ink-dim transition-colors hover:text-ink">
               {l.label}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -59,9 +69,9 @@ export default function Navbar({ githubStars }: { githubStars?: ReactNode }) {
         <div className="mx-auto mt-2 max-w-page rounded-2xl border border-border bg-surface px-5 py-5 shadow-lg lg:hidden">
           <div className="flex flex-col gap-4">
             {NAV_LINKS.map((l) => (
-              <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-sm text-ink-dim">
+              <Link key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-sm text-ink-dim">
                 {l.label}
-              </a>
+              </Link>
             ))}
             <div className="mt-2 flex items-center gap-3">
               <ThemeToggle />

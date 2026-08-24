@@ -44,15 +44,16 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (<html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
-    <body className="font-body antialiased">
-      <ThemeProvider>{children}</ThemeProvider>
-      <Script
-        src={process.env.NEXT_PUBLIC_UMAMI_SCRIPT_URL}
-        data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
-        strategy="afterInteractive"
-      />
-    </body>
-  </html>
+  return (
+    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning data-scroll-behavior="smooth">
+      <body className="font-body antialiased">
+        <ThemeProvider>{children}</ThemeProvider>
+        <Script
+          src={process.env.NEXT_PUBLIC_UMAMI_SCRIPT_URL}
+          data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
+          strategy="afterInteractive"
+        />
+      </body>
+    </html>
   );
 }

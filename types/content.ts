@@ -33,3 +33,17 @@ export type FaqItem = {
   question: string;
   answer: string;
 };
+
+export type LegalSection = {
+  id: string;
+  heading: string;
+  body: string[];
+};
+
+export type LegalPageCopy = {
+  eyebrow: string;
+  title: string;
+  lastUpdated: string;
+  intro: string;
+  sections: LegalSection[];
+};

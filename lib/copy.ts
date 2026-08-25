@@ -57,7 +57,7 @@ export const footerCopy = {
   ctaTitle: 'Ready to see Broken Access Control get caught, live?',
   ctaButton: 'Open the live dashboard',
   tagline: 'A stack-agnostic reverse proxy built to prove Broken Access Control can be caught before it reaches your app - not just described in a paper.',
-  credit: 'Final year project · Abiola Ajimobi First Technical University, Ibadan',
+  credit: 'Final year project · Abiola Ajimobi Technical University, Ibadan',
   copyright: '© 2026 BAC Gateway. Built as a research project.',
 };
 

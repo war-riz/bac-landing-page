@@ -123,7 +123,7 @@ No environment variables or backend services are required to run this repository
 
 ## Project background
 
-BAC Gateway started as a final year research project at Abiola Ajimobi First Technical University, Ibadan, under the B.Sc. Cyber Security programme. It is a working proof of concept with a full detection pipeline, a real time dashboard, and a Docker Compose setup that runs the gateway, the dashboard, and a deliberately vulnerable demo application together on a single machine, nothing needs to be public to see it working end to end.
+BAC Gateway started as a final year research project at Abiola Ajimobi Technical University, Ibadan, under the B.Sc. Cyber Security programme. It is a working proof of concept with a full detection pipeline, a real time dashboard, and a Docker Compose setup that runs the gateway, the dashboard, and a deliberately vulnerable demo application together on a single machine, nothing needs to be public to see it working end to end.
 
 ## Contributing
 

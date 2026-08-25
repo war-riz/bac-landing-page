@@ -41,6 +41,9 @@ export const metadata: Metadata = {
     images: ['/seo/twitter-image.png'],
   },
   robots: { index: true, follow: true },
+  verification: {
+    google: '8s3kqgJRc-SPZdF6wzQzXM0IyCcMVkF5CHu-7cgc7x0',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
